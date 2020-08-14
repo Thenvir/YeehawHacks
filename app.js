@@ -33,7 +33,7 @@ function next(){
 
     animatePress(name);
     playSound(name);
-    $('#level-title').text('Level: ' + level);
+    $('#level-title').text('Day: ' + level);
 }
 
 // Event listeners
@@ -49,7 +49,7 @@ $('.btn').click(function (e) {
 
 $(document).keydown(function () {
      if(!started){
-         $('#level-title').text('Level: ' + level);
+         $('#level-title').text('Day: ' + level);
          next();
          started = true;
      }
