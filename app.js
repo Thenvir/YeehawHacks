@@ -11,8 +11,10 @@ let level = 0;
 let started = false;
 
 function playSound(name){
-    let nameSound = name + '.mp3';
+    let number = Math.floor(Math.random() * 4) + 1 + '';
+    let nameSound = name + number + '.mp3';
     var audio = new Audio('sounds/' + nameSound);
+    audio.volume = 0.4;
     audio.play();
 }
 
@@ -36,6 +38,22 @@ function next(){
     $('#level-title').text('Day: ' + level);
 }
 
+function check(end){
+    if(gamePattern[end] === userPattern[end]){
+        console.log('success');
+        if(gamePattern.length === userPattern.length){
+            setTimeout(function(){
+                next();
+                userPattern = [];
+            }, 1500);
+        }
+    }
+    else {
+        console.log("Mistake - you lose");
+        location.href = 'loss.html';
+    }
+}
+
 // Event listeners
 $('.btn').click(function (e) {
     name = e.target.id;
@@ -44,7 +62,7 @@ $('.btn').click(function (e) {
     animatePress(name);
 
     // Check User Answer
-    
+    check(userPattern.length-1);
 });
 
 $(document).keydown(function () {

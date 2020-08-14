@@ -101,6 +101,7 @@ div {
 }
 
 .game-over {
+    background-image: none;
     background-color: rgb(233, 79, 79);
     opacity: 0.7;
 }
