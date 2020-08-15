@@ -4,6 +4,10 @@
 // Next Sequence -- DONE
 // Start over
 // Check Answer
+let scores = JSON.parse(localStorage.getItem('scores'));
+if(scores === '' || null){
+    let scores = [];
+}
 let names = ['spongebob', 'patrick', 'sandy', 'plankton'];
 let userPattern = [];
 let gamePattern = [];
@@ -57,6 +61,10 @@ function check(end){
     }
     else {
         // console.log("Mistake - you lose");
+        // Save to local storage
+        scores.push(userScore);
+        localStorage.setItem('recentScore', JSON.stringify(level));
+        localStorage.setItem('scores', JSON.stringify(scores));
         location.href = 'loss.html';
     }
 }

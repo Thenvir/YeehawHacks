@@ -3,16 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loss</title>
+    <link rel="stylesheet" href="loss.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.jpg">
+    <title>Plankton!!!</title>
 </head>
 <body>
+    <div class="bubbles" id="bubbles">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <h1 class="loading" id="loading">Loading ...</h1>
+    
+    <div class="container" id="container">
+        <div class="top">
+            <h1 class="plankton-title">Plankton Captures Bikini Bottom!</h1>
+            <h4 class="ending-text">After an epic duel that lasted <span id="span-score"></span> days, Dead Eye Plankton won. Can you do better next time, Sheriff?</h4>
+            <a href="index.html"><button>Play again</button></a>
+        </div>
+        <div class="bottom">
+            <h1 class="scores-title">Top Sheriffs</h1>
+            <div id="tableLocation"></div>
+        </div>
+    </div>
+    
 
-    <!-- Play plankton laugh sound -->
 
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <a href="index.html">Play again</a>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="loss.js"></script>
 </body>
 </html>
