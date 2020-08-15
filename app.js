@@ -10,6 +10,11 @@ let gamePattern = [];
 let level = 0;
 let started = false;
 
+var userScore = {
+    name: '',
+    score: 0
+};
+
 function playSound(name){
     let number = Math.floor(Math.random() * 4) + 1 + '';
     let nameSound = name + number + '.mp3';
@@ -32,6 +37,8 @@ function next(){
     let name = names[number];
     gamePattern.push(name);
     level ++;
+    userScore.score++;
+    console.log(userScore);
 
     animatePress(name);
     playSound(name);
@@ -49,7 +56,7 @@ function check(end){
         }
     }
     else {
-        console.log("Mistake - you lose");
+        // console.log("Mistake - you lose");
         location.href = 'loss.html';
     }
 }
@@ -67,8 +74,16 @@ $('.btn').click(function (e) {
 
 $(document).keydown(function () {
      if(!started){
-         $('#level-title').text('Day: ' + level);
-         next();
-         started = true;
+        let playerName = prompt("Please enter a name to save your score, or by default you will be ~Mystery~");
+        if(playerName === '' || playerName === null){
+            playerName = "Mystery";
+        }
+        userScore.name = playerName;
+        // console.log(userScore);
+         setTimeout(()=> {
+            $('#level-title').text('Day: ' + level);
+            next();
+            started = true;
+         }, 500);
      }
 });
