@@ -82,6 +82,10 @@ $('.btn').click(function (e) {
 
 $(document).keydown(function () {
      if(!started){
+        var theme = new Audio('sounds/seaweed.mp3');
+        theme.volume = 0.2;
+        theme.loop = true;
+        theme.play();
         let playerName = prompt("Please enter a name to save your score, or by default you will be ~Mystery~");
         if(playerName === '' || playerName === null){
             playerName = "Mystery";
