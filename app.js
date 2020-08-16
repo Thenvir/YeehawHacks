@@ -5,7 +5,7 @@
 // Start over
 // Check Answer
 let scores = JSON.parse(localStorage.getItem('scores'));
-if(scores === '' ||scores === null){
+if(!Array.isArray(scores)){
     let scores = [];
 }
 let names = ['spongebob', 'patrick', 'sandy', 'plankton'];
