@@ -4,9 +4,9 @@
 // Next Sequence -- DONE
 // Start over
 // Check Answer
-let scores = JSON.parse(localStorage.getItem('scores'));
+var scores = JSON.parse(localStorage.getItem('scores'));
 if(!Array.isArray(scores)){
-    let scores = [];
+    var scores = [];
 }
 let names = ['spongebob', 'patrick', 'sandy', 'plankton'];
 let userPattern = [];
